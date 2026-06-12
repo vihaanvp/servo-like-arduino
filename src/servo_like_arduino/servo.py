@@ -59,15 +59,17 @@ class Servo:
             self.write(target_angle)
             return
 
+        if target_angle == self.current_angle:
+            return
+
         step = 1 if target_angle > self.current_angle else -1
 
         for angle in range(
-            self.current_angle,
+            self.current_angle + step,
             target_angle + step,
             step
         ):
-            self._servo.write(angle)
-            self.current_angle = angle
+            self.write(angle)
             delay(delay_ms)
 
     def sweep(
