@@ -34,6 +34,7 @@ class Servo:
 
         self._servo.write(angle)
         self.current_angle = angle
+
     def read(self):
         if self._servo is None:
             raise RuntimeError(
