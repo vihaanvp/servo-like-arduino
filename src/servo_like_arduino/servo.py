@@ -82,6 +82,9 @@ class Servo:
                 "step must be greater than 0"
             )
 
+        start = max(0, min(180, int(start)))
+        end = max(0, min(180, int(end)))
+
         if start < end:
             for angle in range(start, end + 1, step):
                 self.write(angle)
