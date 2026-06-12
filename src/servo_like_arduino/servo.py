@@ -25,7 +25,12 @@ class Servo:
                 "Servo not attached. Call attach(pin) first."
             )
 
-        angle = max(0, min(180, int(angle)))
+        try:
+            angle = int(angle)
+        except (TypeError, ValueError) as exc:
+            raise ValueError("angle must be a number between 0 and 180") from exc
+
+        angle = max(0, min(180, angle))
 
         self._servo.write(angle)
         self.current_angle = angle
