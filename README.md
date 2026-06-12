@@ -15,7 +15,7 @@ Upload StandardFirmata to your Arduino:
 
 File → Examples → Firmata → StandardFirmata
 
-## Example
+## Quick Start
 
 ```python
 from servo_like_arduino import *
@@ -25,18 +25,32 @@ Board('/dev/ttyUSB0')
 servo = Servo()
 servo.attach(9)
 
-servo.write(0)
-delay(1000)
-
 servo.write(90)
-delay(1000)
+```
 
-servo.write(180)
+## Smooth Movement
+
+```python
+servo.move_smooth(180)
+```
+
+## Sweep
+
+```python
+servo.sweep(
+    start=0,
+    end=180,
+    step=1,
+    delay_ms=15
+)
 ```
 
 ## Features
 
-- Arduino-like syntax
-- Simple servo control
+- Arduino-style syntax
+- Servo control
+- Smooth movement
+- Sweep functionality
+- delay()
+- millis()
 - Built on PyFirmata2
-- Compatible with StandardFirmata
