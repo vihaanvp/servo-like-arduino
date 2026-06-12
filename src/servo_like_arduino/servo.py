@@ -27,9 +27,8 @@ class Servo:
 
         angle = max(0, min(180, int(angle)))
 
-        self.current_angle = angle
         self._servo.write(angle)
-
+        self.current_angle = angle
     def read(self):
         if self.current_angle is None:
             raise RuntimeError(
