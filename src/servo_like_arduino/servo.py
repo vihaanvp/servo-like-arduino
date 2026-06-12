@@ -30,6 +30,11 @@ class Servo:
         self._servo.write(angle)
         self.current_angle = angle
     def read(self):
+        if self._servo is None:
+            raise RuntimeError(
+                "Servo not attached. Call attach(pin) first."
+            )
+
         if self.current_angle is None:
             raise RuntimeError(
                 "Servo angle is unknown. Call write() first."
