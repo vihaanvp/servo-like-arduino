@@ -5,7 +5,7 @@ Arduino-style servo control for Python using PyFirmata2.
 ## Installation
 
 ```bash
-pip install pyfirmata2
+pip install pyfirmata2 pyserial
 pip install servo-like-arduino
 ```
 
