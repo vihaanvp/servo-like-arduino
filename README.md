@@ -2,6 +2,8 @@
 
 Arduino-style servo control for Python using PyFirmata2.
 
+> ⚠️ NOTE: This project has been made completely using AI (ChatGPT). If any issues or security vunerabilities are found, please report in issues tab
+
 ## Installation
 
 ```bash
